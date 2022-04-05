@@ -5,6 +5,8 @@ VisualStudioVersion = 17.0.32126.317
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LeMotSolveur.Client", "Client\LeMotSolveur.Client.csproj", "{A789CAE2-99A1-4D0D-B492-6FB0A727E94D}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LeMotSolveur.Api", "Api\LeMotSolveur.Api.csproj", "{B4C231CE-C160-44EE-83AC-88CCD1B969FE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{A789CAE2-99A1-4D0D-B492-6FB0A727E94D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A789CAE2-99A1-4D0D-B492-6FB0A727E94D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A789CAE2-99A1-4D0D-B492-6FB0A727E94D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4C231CE-C160-44EE-83AC-88CCD1B969FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4C231CE-C160-44EE-83AC-88CCD1B969FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4C231CE-C160-44EE-83AC-88CCD1B969FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4C231CE-C160-44EE-83AC-88CCD1B969FE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
