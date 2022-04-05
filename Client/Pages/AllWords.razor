@@ -1,0 +1,21 @@
+﻿@page "/allwords"
+@inject HttpClient http
+
+<h3>Tout les mots</h3>
+@if (words == null || !words.Any())
+{
+    <p> Chargement... </p>
+}
+else
+{
+    <WordList Words="@words" />
+}
+
+
+@code {
+    private IEnumerable<string> words = new List<string>();
+    protected override async Task OnInitializedAsync()
+    {
+        words = await http.GetFromJsonAsync<IEnumerable<string>>("api/words");
+    }
+}

@@ -1,0 +1,9 @@
+﻿
+@foreach(string word in Words.OrderBy(x=>x))
+{
+    <div >@word</div><br />
+}
+@code {
+    [Parameter]
+    public IEnumerable<string> Words{ get; set; }
+}
