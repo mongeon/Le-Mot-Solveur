@@ -32,7 +32,7 @@ public class Solveur
     public async Task<IActionResult> Run(
         [HttpTrigger(AuthorizationLevel.Function, "get", Route = "words")] HttpRequest req, ExecutionContext context)
     {
-        _logger.LogInformation("C# HTTP trigger function processed a request.");
+         _logger.LogInformation("C# HTTP trigger function processed a request.");
 
         string path = GetAllWords(context);
         var words = await File.ReadAllTextAsync(path);
