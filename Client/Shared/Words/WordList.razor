@@ -1,11 +1,13 @@
-﻿
-@* @foreach(string word in Words.OrderBy(x=>x))
-{
+﻿@* @foreach(string word in Words.OrderBy(x=>x))
+    {
     <div >@word</div><br />
-} *@
-<Virtualize Items="@Words" Context="word" >
-    <div >@word</div><br />
-     <Placeholder>
+    } *@
+<Virtualize Items="@Words" Context="word">
+    <ItemContent>
+        <div>@word</div><br />
+    </ItemContent>
+
+    <Placeholder>
         <p>
             Chargement...
         </p>
@@ -13,5 +15,5 @@
 </Virtualize>
 @code {
     [Parameter]
-    public IEnumerable<string> Words{ get; set; }
+    public IEnumerable<string> Words { get; set; }
 }
