@@ -2,16 +2,8 @@
     {
     <div >@word</div><br />
     } *@
-<Virtualize Items="@Words" Context="word">
-    <ItemContent>
-        <div>@word</div><br />
-    </ItemContent>
-
-    <Placeholder>
-        <p>
-            Chargement...
-        </p>
-    </Placeholder>
+<Virtualize Items="@Words">
+        <div>@context</div><br />
 </Virtualize>
 @code {
     [Parameter]
