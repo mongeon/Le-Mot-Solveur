@@ -4,4 +4,4 @@ This project is a solver for [Le Mot](wordle.louan.me), a French version game in
 
 You can find the source code for Le Mot on [Github](https://github.com/LouanBen/wordle-fr).
 
-You can see the Solveur in action here: https://jolly-rock-052e5570f.1.azurestaticapps.net
+You can see the Solveur in action here: https://lemotsolveur.gabrielmongeon.ca/
