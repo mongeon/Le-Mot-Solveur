@@ -1,8 +1,4 @@
-﻿o@* @foreach(string word in Words.OrderBy(x=>x))
-    {
-    <div >@word</div><br />
-    } *@
-<Virtualize Context="word" Items="@WordsCollection"  OverscanCount="9">
+﻿<Virtualize Context="word" Items="@WordsCollection"  OverscanCount="9">
      <ItemContent>
          @word<br />
      </ItemContent>    
