@@ -14,7 +14,9 @@ public class FindWords
 	}
 	public IEnumerable<string> Process(string fixedLetters, string goodLetters, string badLetters)
 	{
-        if (string.IsNullOrEmpty(goodLetters))
+		if (string.IsNullOrEmpty(fixedLetters))
+			fixedLetters = string.Empty;
+		if (string.IsNullOrEmpty(goodLetters))
 			goodLetters = string.Empty;      
 		if (string.IsNullOrEmpty(badLetters))		
 			badLetters = string.Empty;
