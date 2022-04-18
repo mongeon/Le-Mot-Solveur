@@ -1,9 +1,26 @@
-﻿
-@foreach(string word in Words.OrderBy(x=>x))
-{
-    <div >@word</div><br />
-}
+﻿<div class="container same-width">
+    <div class="row">
+        <Virtualize Context="word" Items="@WordsCollection" OverscanCount="50">
+            <ItemContent>
+                <div class="col">
+                    @word
+                </div>
+            </ItemContent>
+            <Placeholder>
+                <p>
+                    Chargement&hellip;
+                </p>
+            </Placeholder>
+        </Virtualize>
+    </div>
+</div>
 @code {
     [Parameter]
-    public IEnumerable<string> Words{ get; set; }
+    public IEnumerable<string> Words
+    {
+        get { return WordsCollection.ToList(); }
+        set { WordsCollection = value.OrderBy(x => x).ToList(); }
+    }
+
+    public ICollection<string> WordsCollection { get; set; }
 }
