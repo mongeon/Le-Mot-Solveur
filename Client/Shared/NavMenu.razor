@@ -1,38 +1,10 @@
-﻿<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="">Le Mot: Solveur</a>
-        <button class="navbar-toggler @NavButtonCssClass" type="button" aria-controls="navbarCollapse"
-            aria-label="Toggle navigation" @onclick="ToggleNavMenu">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse @NavBarCssClass" id="navbarCollapse" @onclick="ToggleNavMenu">
-            <ul class="navbar-nav me-auto mb-2 mb-md-0">
-                <li class="nav-item">
-                    <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
-                        <span class="oi oi-home" aria-hidden="true"></span> Accueil
-                    </NavLink>
-                </li>
-                <li class="nav-item">
-                    <NavLink class="nav-link" href="allwords">
-                        <span class="oi oi-list-rich" aria-hidden="true"></span> Tout les mots
-                    </NavLink>
-                </li>
-                <li class="nav-item">
-                    <NavLink class="nav-link" href="https://github.com/mongeon/Le-Mot-Solveur">
-                        <span class="oi oi-code" aria-hidden="true"></span> Github
-                    </NavLink>
-                </li>
-            </ul>
-        </div>
-    </div>
-</nav>
-@code {
-    private bool collapseNavMenu = true;
-    private string? NavBarCssClass => collapseNavMenu ? null : "show";
-    private string? NavButtonCssClass => collapseNavMenu ? "collapsed" : null;
-
-    private void ToggleNavMenu()
-    {
-        collapseNavMenu = !collapseNavMenu;
-    }
-}
+﻿<MudAppBar Elevation="1">
+    <MudLink Href="" Color="Color.Inherit" Edge="Edge.Start">
+        <MudText Typo="Typo.h5" Class="ml-3">Le Mot: Solveur</MudText>
+    </MudLink>
+    <MudLink Href="allwords" Color="Color.Inherit" Edge="Edge.Start">
+        <MudText Class="ml-3">Tout les mots</MudText>
+    </MudLink>
+    <MudSpacer />
+    <MudIconButton Icon="@Icons.Custom.Brands.GitHub" Color="Color.Inherit" Edge="Edge.End" Href="https://github.com/mongeon/Le-Mot-Solveur" />
+</MudAppBar>

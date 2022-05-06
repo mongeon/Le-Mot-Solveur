@@ -1,33 +1,38 @@
 ﻿@page "/"
 @inject NavigationManager NavigationManager
 <PageTitle>Solveur</PageTitle>
-
-
-Bienvenue sur Le Mot: Solveur
+<p>
+    <MudText Typo="Typo.body1">
+        Bienvenue sur Le Mot: Solveur
+    </MudText> 
+</p>
 <p>
     <div class="form-floating">
-        <input class="form-control" type="text" style="text-transform:uppercase" id="possCharacters" @bind=ExactCharacters />
-        <label for="possCharacters">Lettres exactes (Utiliser _, * ou " "(Espace))</label>
+        <MudTextField @bind-Value="ExactCharacters" Style="text-transform: uppercase" Immediate="true" id="possCharacters" T="string" Counter="5" MaxLength=5 Label="Lettres exactes (Utiliser _, * ou ' '(Espace))" Variant="Variant.Outlined"></MudTextField>
     </div>
     <div class="form-floating">
-        <input class="form-control" type="text" style="text-transform:uppercase" id="possCharacters" @bind=PossibleCharacters />
-        <label for="possCharacters">Lettres potentielle</label>
+        <MudTextField @bind-Value="PossibleCharacters" Style="text-transform:uppercase;" Immediate="true" id="possCharacters" Counter="21" MaxLength=21 Label="Lettres potentielles" Variant="Variant.Outlined" />
     </div>
     <div class="form-floating">
-        <input class="form-control" type="text" style="text-transform:uppercase" id="possCharacters" @bind=BadCharacters />
-        <label for="possCharacters">Lettres non-présentes</label>
+        <MudTextField @bind-Value="BadCharacters" Style="text-transform:uppercase" Immediate="true" id="possCharacters" Counter="21" MaxLength=21 Label="Lettres non-présentes" Variant="Variant.Outlined" />
     </div>
-    
-    <button class="btn btn-primary" @onclick="Search">Recherche</button>
+    <MudButton Disabled="@IsSearching" Variant="Variant.Filled" Color="Color.Primary" EndIcon="@Icons.Material.Filled.Search" @onclick="Search">
+
+        @if (IsSearching)
+        {
+            <MudProgressCircular Class="ms-n1" Size="Size.Small" Indeterminate="true" />
+            <MudText Class="ms-2">Recherche en cours...</MudText>
+        }
+        else
+        {
+            <MudText Class="ms-2">Rechercher</MudText>
+        }
+    </MudButton>
 </p>
 
-@if (IsSearching)
-{
-    <p> Chargement... </p>
-}
-else
+@if (!IsSearching)
 {
     <div>@words.Count()&nbsp;mot(s)</div>
-    
+
     <WordList Words="@words" />
 }
