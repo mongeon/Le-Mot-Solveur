@@ -2,8 +2,15 @@
 @inject NavigationManager NavigationManager
 <PageTitle>Solveur</PageTitle>
 
+<p­>
+    Bienvenue sur Le Mot: Solveur
+</p­>
 
-Bienvenue sur Le Mot: Solveur
+<p>
+    Un utilitaire pour vous aider à résoudre <a href="https://wordle.louan.me/" target="_blank">Le Mot</a>, la version française du jeu Wordle.
+</p>
+
+
 <p>
     <div class="form-floating">
         <input class="form-control" type="text" style="text-transform:uppercase" id="possCharacters" @bind=ExactCharacters />
@@ -17,7 +24,7 @@ Bienvenue sur Le Mot: Solveur
         <input class="form-control" type="text" style="text-transform:uppercase" id="possCharacters" @bind=BadCharacters />
         <label for="possCharacters">Lettres non-présentes</label>
     </div>
-    
+
     <button class="btn btn-primary" @onclick="Search">Recherche</button>
 </p>
 
@@ -28,6 +35,6 @@ Bienvenue sur Le Mot: Solveur
 else
 {
     <div>@words.Count()&nbsp;mot(s)</div>
-    
+
     <WordList Words="@words" />
 }
