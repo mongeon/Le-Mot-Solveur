@@ -1,11 +1,17 @@
 ﻿@page "/"
 @inject NavigationManager NavigationManager
 <PageTitle>Solveur</PageTitle>
+
 <p>
     <MudText Typo="Typo.body1">
         Bienvenue sur Le Mot: Solveur
     </MudText> 
 </p>
+
+<p>
+    Un utilitaire pour vous aider à résoudre <a href="https://wordle.louan.me/" target="_blank">Le Mot</a>, la version française du jeu Wordle.
+</p>
+
 <p>
     <div class="form-floating">
         <MudTextField @bind-Value="ExactCharacters" Class="text-upper" Immediate="true" id="possCharacters" T="string" Counter="5" MaxLength=5 Label="Lettres exactes (Utiliser _, * ou ' '(Espace))" Variant="Variant.Outlined"></MudTextField>
@@ -28,6 +34,7 @@
             <MudText Class="ms-2">Rechercher</MudText>
         }
     </MudButton>
+
 </p>
 
 @if (!IsSearching)
