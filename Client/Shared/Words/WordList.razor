@@ -1,19 +1,9 @@
-﻿<div class="container same-width">
-    <div class="row">
-        <Virtualize Context="word" Items="@WordsCollection" OverscanCount="50">
-            <ItemContent>
-                <div class="col">
-                    @word
-                </div>
-            </ItemContent>
-            <Placeholder>
-                <p>
-                    Chargement&hellip;
-                </p>
-            </Placeholder>
-        </Virtualize>
-    </div>
-</div>
+﻿<MudPaper Class="d-flex flex-wrap gap-x-4" Elevation="0">
+    @foreach (var word in WordsCollection)
+    {
+        <MudText Class="same-width">@word</MudText>
+    }
+</MudPaper>
 @code {
     [Parameter]
     public IEnumerable<string> Words

@@ -19,10 +19,10 @@ public partial class Index
 
     protected override async Task OnInitializedAsync()
     {
-        IsSearching = true;
-        allWords = await http.GetFromJsonAsync<IEnumerable<string>>("api/words");
+        //IsSearching = true;
+        //allWords = await http.GetFromJsonAsync<IEnumerable<string>>("api/words");
         words = allWords;
-        IsSearching = false;
+        //IsSearching = false;
     }
     public async void Search()
     {
