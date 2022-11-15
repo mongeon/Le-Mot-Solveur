@@ -2,6 +2,6 @@
 
 public class Results
 {
-    public string[] WordsList { get; set; }
+    public IEnumerable<string> WordsList { get; set; } = new List<string>();
     public IEnumerable<LetterFrequency> LetterProbability { get; set; }
 }

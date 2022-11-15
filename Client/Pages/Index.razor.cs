@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Components;
 using System.Net.Http.Json;
-using System.Text.RegularExpressions;
 
 namespace LeMotSolveur.Client.Pages;
 
@@ -11,10 +10,10 @@ public partial class Index
     public string PossibleCharacters { get; set; }
     public string ExactCharacters { get; set; }
     public string BadCharacters { get; set; }
-    
 
-    public IEnumerable<string> allWords = new List<string>();
-    public IEnumerable<string> words = new List<string>();
+
+    public Core.Results allWords = new Core.Results();
+    public Core.Results words = new Core.Results();
     public bool IsSearching = false;
 
     protected override async Task OnInitializedAsync()
@@ -36,13 +35,12 @@ public partial class Index
         var result = await http.PostAsJsonAsync("api/words", request);
         if (result.IsSuccessStatusCode)
         {
-            
-            words = await result.Content.ReadFromJsonAsync<IEnumerable<string>>();
+            words = await result.Content.ReadFromJsonAsync<Core.Results>();
         }
         else
         {
-            words = new List<string>();
-        }        
+            words = new Core.Results();
+        }
         IsSearching = false;
         base.StateHasChanged();
     }
