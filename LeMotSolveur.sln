@@ -7,6 +7,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LeMotSolveur.Client", "Clie
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LeMotSolveur.Api", "Api\LeMotSolveur.Api.csproj", "{B4C231CE-C160-44EE-83AC-88CCD1B969FE}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LeMotSolveur.Core", "LeMotSolver.Core\LeMotSolveur.Core.csproj", "{0CB55DE0-3F83-41AC-882A-D6681E0DA02C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Éléments de solution", "Éléments de solution", "{4B208554-436D-4398-8EB8-FD9C44124BB5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,10 @@ Global
 		{B4C231CE-C160-44EE-83AC-88CCD1B969FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B4C231CE-C160-44EE-83AC-88CCD1B969FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B4C231CE-C160-44EE-83AC-88CCD1B969FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0CB55DE0-3F83-41AC-882A-D6681E0DA02C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0CB55DE0-3F83-41AC-882A-D6681E0DA02C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0CB55DE0-3F83-41AC-882A-D6681E0DA02C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0CB55DE0-3F83-41AC-882A-D6681E0DA02C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
