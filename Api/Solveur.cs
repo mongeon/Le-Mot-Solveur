@@ -36,8 +36,9 @@ public class Solveur
 
         string path = GetAllWords(context);
         var words = await File.ReadAllTextAsync(path);
+        var allWords = JsonSerializer.Deserialize<List<string>>(words);
 
-        return new OkObjectResult(words);
+        return new OkObjectResult(new Core.Results { WordsList = allWords });
     }
 
     [FunctionName("ResolveWords")]

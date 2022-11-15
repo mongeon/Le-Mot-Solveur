@@ -52,7 +52,7 @@ public class FindWords
         regexExpression = $"^{regexExpression}$";
         results = results.ToList().FindAll((string s) => Regex.IsMatch(s, regexExpression));
 
-        var wordsResult = new Core.Results() { WordsList = results.ToArray() };
+        var wordsResult = new Core.Results() { WordsList = results };
 
         var letterFrequencies = CalculateLettersFrequencies(results);
         wordsResult.LetterProbability = letterFrequencies;

@@ -39,9 +39,9 @@
 
 @if (!IsSearching)
 {
-    <div>@words.Count()&nbsp;mot(s)</div>
+    <div>@words.WordsList?.Count()&nbsp;mot(s)</div>
 
-    <WordList Words="@words" />
+    <WordList Words="@words.WordsList" />
 }
 <style>
     .text-upper input {
