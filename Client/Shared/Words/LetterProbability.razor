@@ -1,0 +1,27 @@
+﻿@if (Letters.Any())
+{
+    <MudPaper Outlined="true" Class="border-dashed" Elevation="0">
+        <MudStack Row="true" Justify="Justify.Center" AlignItems="AlignItems.Center">
+            @foreach (var letter in Letters.Take(10))
+            {
+                <MudPaper Class="pa-1" Square="true" Outlined="true" Elevation="0">
+                    <MudStack Justify="Justify.Center" AlignItems="AlignItems.Center" Spacing="0">
+                        <MudText Typo="Typo.body2"><b>@letter.Letter</b></MudText>
+                        <MudText Typo="Typo.caption">@(letter.Probability.ToString("P1"))</MudText>
+                        </MudStack>
+                    </MudPaper>
+            }
+        </MudStack>
+    </MudPaper>
+}
+
+@code {
+    [Parameter]
+    public IEnumerable<Core.LetterFrequency> Letters
+    {
+        get { return LettersCollection.ToList(); }
+        set { LettersCollection = value.OrderByDescending(x => x.Probability).ToList(); }
+    }
+
+    public ICollection<Core.LetterFrequency> LettersCollection { get; set; }
+}
