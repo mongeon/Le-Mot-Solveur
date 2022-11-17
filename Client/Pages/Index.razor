@@ -5,7 +5,7 @@
 <p>
     <MudText Typo="Typo.body1">
         Bienvenue sur Le Mot: Solveur
-    </MudText> 
+    </MudText>
 </p>
 
 <p>
@@ -40,6 +40,8 @@
 @if (!IsSearching)
 {
     <div>@words.WordsList?.Count()&nbsp;mot(s)</div>
+
+    <LetterProbability Letters="@words.LetterProbability" />
 
     <WordList Words="@words.WordsList" />
 }
