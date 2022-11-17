@@ -1,7 +1,7 @@
 ﻿@if (Letters.Any())
 {
     <MudPaper Outlined="true" Class="border-dashed" Elevation="0">
-        <MudStack Row="true" Justify="Justify.Center" AlignItems="AlignItems.Center">
+        <MudStack Class="overflow-auto" Row="true" Justify="Justify.Center" AlignItems="AlignItems.Center">
             @foreach (var letter in Letters.Take(10))
             {
                 <MudPaper Class="pa-1" Square="true" Outlined="true" Elevation="0">
